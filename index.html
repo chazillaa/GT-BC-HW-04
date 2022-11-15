@@ -5,9 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/style.css">
-    <title>Document</title>
+    <title>Javascript Quiz</title>
 </head>
+
+
 <body>
-    
+    <header class="top-bar">
+
+        <div class="score-screen"><a href="scoreboard.html">View highscore</a></div>
+
+        <div class="timer">Time:00</div>
+
+    </header>
+
+
+
+
+
+    <div class="quiz-container">
+        <div class="start-screen" id="start">
+            <h1>Javascript Quiz</h1>
+            <p>Take this quiz to see how much you know about Javascript.</p>
+            <button id="start-button">START</button>
+        </div>    
+    </div>
+
+
+
+
+
+     <div class="quiz-screen" id="questions">
+        <h2 id="current-question"></h2>
+        <p class="options" id="options"></p>
+    </div>
+
+
+
+
+
+     <div class="score-screen" id="scores">
+        <h2>You have finished the quiz.</h2>
+        <p>Your quiz score is</p>
+        <p>Enter initials:</p>
+    </div>
+
+
+    <script src="./Assets/script.js"></script>
+
 </body>
 </html>
