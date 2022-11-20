@@ -6,12 +6,7 @@ var questionsArray = [
       },
       {
         title: "What are the two basic groups of data types in JavaScript?",
-        options: [
-          "Primitive and attribute",
-          "Primitive and reference types",
-          "Reference types and attribute",
-          "None of the above"
-        ],
+        options: ["Primitive and attribute", "Primitive and reference types", "Reference types and attribute", "None of the above"],
         answer: "Primitive and reference types"
       },
       {
@@ -21,23 +16,12 @@ var questionsArray = [
       },
       {
         title: "Boolean operators that can be used in JavaScript include:",
-        options: [
-          "'And' Operator &&",
-          "'Or' Operator ||",
-          "'Not' Operator !",
-          "All the above"
-        ],
+        options: ["'And' Operator &&","'Or' Operator ||","'Not' Operator !","All the above"],
         answer: "All the above"
       },
       {
-        title:
-          "Which one of these is not among the three different types of errors in JavaScript?",
-          options: [
-          "Animation time errors",
-          "Load time errors",
-          "Run time errors",
-          "Logical Errors"
-        ],
+        title:"Which one of these is not among the three different types of errors in JavaScript?",
+        options: ["Animation time errors", "Load time errors", "Run time errors","Logical Errors"],
         answer: "Animation time errors"
       },
       {
@@ -50,21 +34,19 @@ var questionsArray = [
         options: ["quotes", "curly brackets", "parentheses", "square brackets"],
         answer: "parentheses"
       },
-    //   {
-    //     title: "Arrays in JavaScript can be used to store ____.",
-    //     choices: ["numbers and strings","other arrays","booleans","all of the above"],
-    //     answer: "all of the above"
-    //   },
       {
-        title:
-          "String values must be enclosed within ____ when being assigned to variables.",
-          options: ["commas", "curly brackets", "quotes", "parentheses"],
+        title: "Arrays in JavaScript can be used to store ____.",
+        options: ["numbers and strings","other arrays","booleans","all of the above"],
+        answer: "all of the above"
+      },
+      {
+        title:"String values must be enclosed within ____ when being assigned to variables.",
+        options: ["commas", "curly brackets", "quotes", "parentheses"],
         answer: "quotes"
       },
       {
-        title:
-          "A very useful tool used during development and debugging for printing content to the debugger is:",
-          options: ["JavaScript", "terminal / bash", "for loops", "console.log"],
+        title:"A very useful tool used during development and debugging for printing content to the debugger is:",
+        options: ["JavaScript", "terminal / bash", "for loops", "console.log"],
         answer: "console.log"
       },
       {
@@ -82,7 +64,7 @@ var submitBtn = document.getElementById(`submit`)
 var initialsEl = document.getElementById(`initials`)
 var feedbackEl = document.getElementById(`feedback`)
 var questionIndex = 0;
-var time = questionsArray.length * 15;
+var time = questionsArray.length * 10;
 
 startBtn.onclick = startQuiz
 submitBtn.onclick = submitScore
@@ -90,8 +72,8 @@ submitBtn.onclick = submitScore
 function countDown() {
     time--
     timerEl.textContent = time
-    if (time <=0){
-        clearInterval(timerId)
+    if (time <= 0){
+        clearInterval(myTimer)
         endQuiz()
 }}
 
@@ -101,11 +83,9 @@ function startQuiz() {
 
     questionsEl.removeAttribute(`class`)
 
-    timerId = setInterval(countDown, 1000);
+    myTimer = setInterval(countDown, 1000);
 
     timerEl.textContent = time;
-
-    console.log(`start button was pressed`)
 
     pullQuestion()
 }
@@ -138,7 +118,7 @@ function pullQuestion() {
 
 function choiceClick(){
     if (this.value !== questionsArray[questionIndex].answer) {
-        time -= 5
+        time -= 10
 
         if (time < 0) {
             time = 0
@@ -171,26 +151,24 @@ function choiceClick(){
 function submitScore() {
     var initScore = initialsEl.value.trim()
         if (initScore !== "") {
-    var scoreBoard = JSON.parse(localStorage.getItem(`scoreBoard`)) || []
+    var scoreBoard = JSON.parse(window.localStorage.getItem(`scoreBoard`)) || []
 
     var addScore = {score: time, initScore: initScore}
 
     scoreBoard.push(addScore)
-    localStorage.setItem(`scoreBoard`, JSON.stringify(scoreBoard))
+    window.localStorage.setItem(`scoreBoard`, JSON.stringify(scoreBoard))
 
     location.href = "scoreboard.html"
 }}
 
 function endQuiz() {
-    console.log(`timer ran out`)
     var killScreen = document.getElementById(`kill-screen`)
     killScreen.removeAttribute(`class`)
-
-    questionsEl.setAttribute('class', 'display')
-
     var quizScore = document.getElementById(`quiz-score`)
     quizScore.textContent = time;
+    questionsEl.setAttribute('class', 'display')
 }
+
 
 // function checkForSubmit(event) {
 //     if (event.key === `submit`) {
