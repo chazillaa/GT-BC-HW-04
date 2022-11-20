@@ -1,18 +1,49 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     border: 1px black;
+    text-align: center;
+    padding: 5px;
 }
 
 .top-bar {
     padding: 10px;
-    
 }
 
-/* .timer {
+.time-display {
     float: right;
 }
 
-.score-screen {
+.finals-score-screen {
     float: left;
-} */
+}
 
+.display {
+    display: none;
+  }
+  
+
+.quiz-container {
+    margin: 200px auto 0 auto;
+    max-width: 500px;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.options button {
+    display: block;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    margin: 10px 350px;
+   
+}
+
+ol {
+    display: block;
+    margin: 10px 550px;
+    font-weight: 600;
+}

@@ -7,50 +7,29 @@
     <link rel="stylesheet" href="./Assets/style.css">
     <title>Javascript Quiz</title>
 </head>
-
-
 <body>
     <header class="top-bar">
-
-        <div class="score-screen"><a href="scoreboard.html">View highscore</a></div>
-
-        <div class="timer">Time:00</div>
-
+        <div class="finals-score-screen"><a href="scoreboard.html">View highscore</a></div>
+        <div class="time-display">Time:<span id="time">0</span></div>
     </header>
-
-
-
-
-
     <div class="quiz-container">
-        <div class="start-screen" id="start">
+        <div id="start-screen">
             <h1>Javascript Quiz</h1>
             <p>Take this quiz to see how much you know about Javascript.</p>
             <button id="start-button">START</button>
         </div>    
     </div>
-
-
-
-
-
-     <div class="quiz-screen" id="questions">
+     <div id="question-screen" class="display">
         <h2 id="current-question"></h2>
         <p class="options" id="options"></p>
     </div>
-
-
-
-
-
-     <div class="score-screen" id="scores">
+     <div id="kill-screen" class="display">
         <h2>You have finished the quiz.</h2>
-        <p>Your quiz score is</p>
-        <p>Enter initials:</p>
+        <p>Your score is : <span id="quiz-score"></span></p>
+        <p>Enter initials:<input type="text" id="initials"/><button id="submit">SUBMIT</button></p>
     </div>
-
-
+    <div id="feedback" class="feedback display"></div>
     <script src="./Assets/script.js"></script>
-
 </body>
+
 </html>
