@@ -3,6 +3,7 @@
     border: 1px black;
     text-align: center;
     padding: 5px;
+    background-color:;
 }
 
 .top-bar {
@@ -19,42 +20,55 @@
 
 .display {
     display: none;
-  }
+  } 
   
-
 .quiz-container {
     margin: 200px auto 0 auto;
     max-width: 500px;
 }
 
 button {
-    background-color: purple;
+    background-color: rgb(92, 0, 167);
     color: white;
     border-radius: 5px;
     cursor: pointer;
 }
 .options button {
     display: block;
-    background-color: purple;
+    flex-direction: row;
+    background-color: rgb(92, 0, 167);
     color: white;
     cursor: pointer;
     padding: 15px 15px;
 }
 
 .options-wrapper {
-    margin: 20px 45%;
     display: flex;
     flex-direction: column;
-    
-    
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
 }
 
-/* #question-screen p{
-    margin: 20px 45%;
-} */
+#initials {
+    border: 1px solid #000;
+}
 
-/* ol {
-    display: block;
-    margin: 10px 550px;
-    font-weight: 600;
-} */
+#scores {
+    flex-direction: column;
+    text-align: center;
+}
+
+.center { 
+    text-align: center; 
+    list-style-position:inside;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

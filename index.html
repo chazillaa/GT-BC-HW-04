@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Assets/style.css" />
     <title>Javascript Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="top-bar">
-        <div class="finals-score-screen"><a href="scoreboard.html">View highscore</a></div>
-        <div class="time-display">Time:<span id="time">0</span></div>
+      <div class="finals-score-screen">
+        <a href="scoreboard.html">View highscore</a>
+      </div>
+      <div class="time-display">Time:<span id="time">0</span></div>
     </header>
     <div class="quiz-container">
-        <div id="start-screen">
-            <h1>Javascript Quiz</h1>
-            <p>Take this quiz to see how much you know about Javascript.</p>
-            <button id="start-button">START</button>
-        </div>    
+      <div id="start-screen">
+        <h1>Javascript Quiz</h1>
+        <p>Take this quiz to see how much you know about Javascript.</p>
+        <button id="start-button">START</button>
+      </div>
     </div>
-     <div id="question-screen" class="display">
-        <h2 id="current-question"></h2>
-        <p class="options-wrapper" id="options"></p>
+    <div id="question-screen" class="display">
+      <h2 id="current-question"></h2>
+      <p class="options-wrapper" id="options"></p>
     </div>
-     <div id="kill-screen" class="display">
-        <h2>You have finished the quiz.</h2>
-        <p>Your score is : <span id="quiz-score"></span></p>
-        <p>Enter initials:<input type="text" id="initials"/><button id="submit">SUBMIT</button></p>
+    <div id="kill-screen" class="display">
+      <h2>You have finished the quiz.</h2>
+      <p>Your score is : <span id="quiz-score"></span></p>
+      <p class="input">
+        Enter initials:<input type="text" id="initials"/><button id="submit">
+          SUBMIT
+        </button>
+      </p>
     </div>
     <div id="feedback" class="feedback display"></div>
     <script src="./Assets/script.js"></script>
-</body>
-
+  </body>
 </html>

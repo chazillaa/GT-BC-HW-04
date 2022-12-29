@@ -1,3 +1,4 @@
+// gets score data from local storage and creates a li element to display on the score board
 function printScores() {
     var scores = JSON.parse(localStorage.getItem("scoreBoard")) || [];
     scores.sort(function(a, b) {
@@ -10,11 +11,14 @@ function printScores() {
       olEl.appendChild(liTag);
     });
   }
-  function clearScores() {
+// removes saved scores and then refreshes the page
+function clearScores() {
     localStorage.removeItem('scoreBoard');
     location.reload();
   }
+// when clear button is clicked run the clearScores function
   document.getElementById("clear").onclick = clearScores;
+// when page is loaded run the printScore function
   printScores();
 
 
